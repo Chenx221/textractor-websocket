@@ -40,7 +40,7 @@ pub extern "C" fn OnNewSentence(
     let safe_s = u16_str.to_string_lossy();
     let current_select = get_property(sentence_info, "current select");
     let text_number = get_property(sentence_info, "text number");
-    if current_select != 0 && text_number > 1 {
+    if current_select != 0 && text_number >= 1 {
         textractor_ws::handle(safe_s);
     }
     sentence
